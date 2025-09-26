@@ -1,0 +1,152 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* html {
+  scrollbar-width: thin;             
+  scrollbar-color: #0357ee #f1f1f1;    
+} */
+
+/*  header  links animation*/
+
+.header-links {
+  position: relative;
+}
+
+.header-links::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: currentColor; 
+   transform: scaleX(0);
+  transform-origin: right;
+  transition: transform ease-out 400ms;
+}
+.header-links:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.white::after {
+  background-color: white;
+}
+.light-gray::after {
+    background-color: #ffffffb2;
+}
+.lightest-gray::after {
+    background-color: #ffffff66;
+}
+/* aniamtion*/
+.anime {
+    display: flex;
+    animation: move 64s linear infinite forwards;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/*animations for testimony container */
+  /* Create rotating border effect */
+circle[data-animation="testimony-circle"] {
+  animation: smallCircle 9s ease-out forwards infinite;
+}
+@keyframes smallCircle {
+  from {
+    stroke-dashoffset: 251.2;
+  } 
+  to {
+    stroke-dashoffset: 0;
+  } 
+}
+
+/* stepper animation */
+.step {
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease;
+  background-color: #fff; 
+}
+
+.step::after {
+  content: "";
+  position: absolute;
+  width: 355px;
+  height: 3px;
+  background-color: #ffffff;
+  right: 57px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.step.first::after {
+  width: 0;
+  height: 0;
+}
+
+/* Active circle */
+.step.active {
+   border: 3px solid #3679f1;  
+}
+
+/* Active connector */
+.step.active::after {
+  background-color: #3679f1;
+}
+
+
+/* Smooth transition effect when scrolling */
+.stepper-track {
+  scroll-behavior: smooth;
+  padding-left: 5rem; 
+}
+
+.stepper {
+  scroll-behavior: smooth; 
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 0.5s ease-in-out; 
+}
+
+
+
+
+/* blog list */
+.blog-list {
+    display: flex;
+    width: fit-content;
+    gap: 1.5rem;
+    transform: translate3d(0px, 0px, 0px);
+    transition: transform 0.5s ease 0s;
+    cursor: grab;
+}
+
+.blog-item {
+    flex: 0 0 250px; /* Don't shrink, don't grow, fixed width */
+}
+
+/* Create a wrapper for infinite scroll */
+.blog-list-wrapper {
+    display: flex;
+    width: fit-content;
+    gap: 1.5rem;
+}
+
+.blog-list-wrapper .blog-list {
+    flex-shrink: 0;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
