@@ -187,11 +187,6 @@ const stepCircles = stepperList?.querySelectorAll(".step-circle") || [];
 console.log("step circles found:", stepCircles.length);
 
 
-// const stepperSection = document.querySelector(".get-started");
-// const stepperList = stepperSection.querySelector(".get-started ul");
-// const steps = stepperList.querySelectorAll(".get-started ul li");
-// const progressBars = stepperList.querySelectorAll(".animated");
-// const stepCircles = stepperList.querySelectorAll(".step-circle"); 
 
 let inStepper = false;        // whether we’re “trapped” in the stepper
 let stepperProgress = 0;      // between 0 and 1
