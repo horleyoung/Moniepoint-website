@@ -9,6 +9,7 @@ const countries = document.querySelectorAll(".nig-dropdown");
   function closeAlert() {
     document.getElementById("customAlert").classList.add("hidden");
   }
+  const mobileCountry = document.querySelector(".nig")
 
 // hamburger for mobile screen
 const hamburger = document.querySelector(".hamburger");
@@ -310,5 +311,11 @@ nextBtn.addEventListener("click", () => {
   showItem(currentIndex);
 });
 
-// Initialize the first view
-showItem(currentIndex);
+// Make dots clickable
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentIndex = index;
+    showItem(currentIndex);
+  });
+});
+
